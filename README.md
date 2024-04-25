@@ -1,5 +1,7 @@
 # SCNU-Typst-Template
 
+欢迎给个星星⭐🌟~ 或者 Fork 本仓库。
+
 ## 华南师范大学本科毕设（论文）模板
 
 > [!WARNING]
@@ -27,4 +29,22 @@ A new markup-based typesetting system that is powerful and easy to learn.
 
 ## 学位论文
 
+> [!NOTE]
+> 魔改自：https://github.com/werifu/HUST-typst-template
+
 见 `paper.typ`
+
+## 广告位
+
+BibTeX:
+
+```bibtex
+@misc{wang2024guiding,
+      title={Guiding Large Language Models to Generate Computer-Parsable Content}, 
+      author={Jiaye Wang},
+      year={2024},
+      eprint={2404.05499},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE}
+}
+```
