@@ -12,7 +12,7 @@
 #let date = datetime(year: 2024, month: 3, day: 26)
 #let institution = ("华南师范大学软件学院", "XXXX公司")
 #let author_email = link("mailto:author@email.com")[author\@email.com]
-#let first_public_at = [https://arxiv.org/abs/2404.05499]
+#let first_public_at = [https://github.com/HK-SHAO/SCNU-Typst-Template]
 
 #let anonymous = false
 #let zky = false
@@ -53,14 +53,14 @@
 
 请自行解决好 `Source Han Sans`, `Source Han Serif SC` 等字体。 #lorem(90)
 
-#lorem(40)
+#lorem(38) 本模板的源代码在：https://github.com/HK-SHAO/SCNU-Typst-Template
   ],
   abstract_en: [
 #lorem(40)
 
 #lorem(80)
 
-#lorem(40)
+#lorem(38) 本模板的源代码在：https://github.com/HK-SHAO/SCNU-Typst-Template
   ],
 )
 
@@ -106,7 +106,7 @@
 #lorem(40)
 
 #pagebreak()
-= 排版基础用法
+= 模板的基础用法
 
 == 脚注
 
