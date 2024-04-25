@@ -30,7 +30,6 @@
 #set text(
   font: "New Computer Modern Mono", size: 12pt)
 
-
 #show: project.with(
   anonymous: anonymous,
   zky: zky,

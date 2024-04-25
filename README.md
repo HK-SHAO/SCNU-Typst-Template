@@ -20,13 +20,6 @@ A new markup-based typesetting system that is powerful and easy to learn.
 - https://typst.app/
 - https://github.com/typst/typst
 
-## 幻灯片
-
-> [!NOTE]
-> 魔改自：https://github.com/touying-typ/touying
-
-见 `slides.typ`
-
 ## 学位论文
 
 > [!NOTE]
@@ -34,9 +27,21 @@ A new markup-based typesetting system that is powerful and easy to learn.
 
 见 `paper.typ`
 
+![](./out/paper/p_01.svg)
+
+## 幻灯片
+
+> [!NOTE]
+> 魔改自：https://github.com/touying-typ/touying
+
+见 `slides.typ`
+
+![](./out/slides/p_01.svg)
+![](./out/slides/p_03.svg)
+
 ## 广告位
 
-BibTeX:
+引用的 BibTeX:
 
 ```bibtex
 @misc{wang2024guiding,
