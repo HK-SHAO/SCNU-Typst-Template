@@ -109,15 +109,11 @@
 
 == 脚注
 
-这是一个脚注#footnote[我是脚注内容]。
+Typst排版编程语言#footnote[https://github.com/typst/typst]。本模板的GitHub链接#footnote[https://github.com/HK-SHAO/SCNU-Typst-Template]。本模板修改自HUST-typst-template#footnote[https://github.com/werifu/HUST-typst-template]。本模板的幻灯片基于touying#footnote[https://github.com/touying-typ/touying]。欢迎关注作者的arXiv文章#footnote[https://arxiv.org/abs/2404.05499]。
 
 == 图片
 
-#img(caption: [图片名])[
-  #rect(inset: 1em)[图片内容]
-] <img1>
-
-引用#[@img1]了。#[@img2]引用了 #cite(label("Burghardt2020"), style: "gb-7714-2015-author-date") 。
+#[@img2]引用了 #cite(label("Burghardt2020"), style: "gb-7714-2015-author-date") 。
 
 #img(caption: [C语言的语法示意图@Burghardt2020])[
   #image("imgs/C_grammar_stmt_svg.svg")
@@ -145,6 +141,53 @@
 )]] <tbl01>
 
 #pagebreak()
+
+== 代码
+#v(-1em)
+#img(caption: [这是代码的图])[
+#set par(leading: 0.39em)
+  ```py
+class MermaidGenerator(TextGenerator):
+    def top(self):
+        yield self.mermaid
+    def mermaid(self):
+        match (yield self.graph_name):
+            case 'flowchart':
+                yield self.flowchart
+    def graph_name(self):
+        yield select('flowchart')
+    def flowchart(self):
+        yield (' ', self.flowchart_type, '\n')
+        yield join('\n', self.flowchart_rules)
+    def flowchart_type(self):
+        yield select('TD', 'LR')
+    def flowchart_rules(self):
+        rand_times = randint(10, 20)
+        single_line = (' '*4, self.flowchart_rule)
+        yield from repeat(single_line, rand_times)
+    def flowchart_rule(self):
+        yield self.node
+        yield ' --> '
+        yield self.node
+    def node(self):
+        yield select(*range(1, 10))
+  ```
+]
+
+== 公式
+
+这是行内 $sum_(i=1)^x (sum_(j=1)^y i j)$ 公式。
+
+#equation(caption: none)[
+$
+f(x, y) = sum_(i=1)^x (sum_(j=1)^y i j)
+$
+] <eq001>
+
+#indent()
+@eq001 是行间公式。这是行内代码 #box(stroke: 1pt, inset: 0.3em, baseline: 0.2em, radius: 0.5em)[```ts let abc = 123;```] 。
+
+
 == 算法
 
 #figure_algo(
@@ -181,48 +224,6 @@
 ] <algo001>
 
 引用#[@algo001]了。
-
-== 公式
-
-这是行内 $sum_(i=1)^x (sum_(j=1)^y i j)$ 公式。
-
-$
-f(x, y) = sum_(i=1)^x (sum_(j=1)^y i j)
-$
-
-上面是行间公式。这是行内代码 #box(stroke: 1pt, inset: 0.3em, baseline: 0.2em, radius: 0.5em)[```ts let abc = 123;```] 。
-
-== 代码
-#v(-1em)
-#img(caption: [这是代码的图])[
-#set par(leading: 0.39em)
-  ```py
-class MermaidGenerator(TextGenerator):
-    def top(self):
-        yield self.mermaid
-    def mermaid(self):
-        match (yield self.graph_name):
-            case 'flowchart':
-                yield self.flowchart
-    def graph_name(self):
-        yield select('flowchart')
-    def flowchart(self):
-        yield (' ', self.flowchart_type, '\n')
-        yield join('\n', self.flowchart_rules)
-    def flowchart_type(self):
-        yield select('TD', 'LR')
-    def flowchart_rules(self):
-        rand_times = randint(10, 20)
-        single_line = (' '*4, self.flowchart_rule)
-        yield from repeat(single_line, rand_times)
-    def flowchart_rule(self):
-        yield self.node
-        yield ' --> '
-        yield self.node
-    def node(self):
-        yield select(*range(1, 10))
-  ```
-]
 
 #pagebreak()
 = #lorem(4)
