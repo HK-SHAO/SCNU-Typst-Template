@@ -433,61 +433,39 @@
 
     #v(40pt)
 
-    // #text(
-    //   font: heiti,
-    //   size: 22pt,
-    // )[
-    //   #title
-    // ]
-
     #v(80pt)
 
-    #let info_value(body) = {
-      rect(
-        width: 100%,
-        inset: 2pt,
-        stroke: (
-          bottom: 1pt + black
-        ),
-        text(
-          font: songti,
-          size: 14pt,
-          bottom-edge: "descender"
-        )[
-          #body
-        ]
-      ) 
-    }
-    
-    #let info_key(body) = {
-      rect(width: 100%, inset: 2pt, 
-       stroke: none,
-       text(
-        font: songti,
-        size: 14pt,
-        body
-      ))
-    }
+    #let info_key(body) = table.cell(
+          stroke: none,
+    )[#body]
 
-    #grid(
-      columns: (68pt, 314pt),
-      rows: (40pt, 40pt),
-      // gutter: 3pt,
-      info_key("论文题目："),
-      info_value(if not false { title } else { "██████████" }),
-      info_key("指导老师："),
-      info_value(if not anonymous { mentor } else { "██████████" }),
-      info_key("学生姓名："),
-      info_value(if not anonymous { author } else { "██████████" }),
-      info_key("学　　号："),
-      info_value(if not anonymous { id } else { "██████████" }),
-      info_key("院　　系："),
-      info_value(if not anonymous { school } else { "██████████" }),
-      info_key("专　　业："),
-      info_value(if not anonymous { class } else { "██████████" }),
-      info_key("毕业时间："),
-      info_value(if not anonymous { graduated_time } else { "██████████" }),
-    )
+    #let info_value(body) = table.cell(
+          stroke: (top: none, left: none, right: none),
+    )[#h(0.5em)#body#h(0.5em)]
+
+    #[
+      #set text(font: songti, size: 14pt)
+      #set align(center)
+      #table(
+        columns: 2,
+        align: center,
+        row-gutter: 16pt,
+        info_key("论文题目："),
+        info_value(if not false { title } else { "██████████" }),
+        info_key("指导老师："),
+        info_value(if not anonymous { mentor } else { "██████████" }),
+        info_key("学生姓名："),
+        info_value(if not anonymous { author } else { "██████████" }),
+        info_key("学　　号："),
+        info_value(if not anonymous { id } else { "██████████" }),
+        info_key("院　　系："),
+        info_value(if not anonymous { school } else { "██████████" }),
+        info_key("专　　业："),
+        info_value(if not anonymous { class } else { "██████████" }),
+        info_key("毕业时间："),
+        info_value(if not anonymous { graduated_time } else { "██████████" }),
+      ) <fmtable>
+    ]
 
     #v(30pt)
     #let 某年某月制 = text(

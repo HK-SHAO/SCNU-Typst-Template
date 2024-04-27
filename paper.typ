@@ -48,7 +48,7 @@
   date: date,
   abstract_zh: [
 
-本模板轻度修改自本人的文章《引导大语言模型生成计算机可解析内容@wang2024guiding》和对应的幻灯片。请必须知悉这不是官方模板，仅供参考。每一届、每一个老师可能都会有不同的标准，请务必做好修改本模板以满足上级要求的准备。
+此模板轻度修改自本人的文章《引导大语言模型生成计算机可解析内容@wang2024guiding》和对应的幻灯片。请必须知悉这不是官方模板，仅供参考。每一届、每一个老师可能都会有不同的标准，请务必做好修改本模板以满足上级要求的准备。
 
 请自行解决好 `Source Han Sans`, `Source Han Serif SC` 等字体。 #lorem(90)
 
@@ -109,7 +109,7 @@
 
 == 脚注
 
-这是一个脚注#footnote[我是脚注]。本模板修改自
+这是一个脚注#footnote[我是脚注内容]。
 
 == 图片
 
@@ -190,11 +190,11 @@ $
 f(x, y) = sum_(i=1)^x (sum_(j=1)^y i j)
 $
 
-上面是行间公式。这是行内代码 #box(stroke: 1pt, inset: 0.3em, baseline: 0.2em)[```ts let abc = 123;```] 。
+上面是行间公式。这是行内代码 #box(stroke: 1pt, inset: 0.3em, baseline: 0.2em, radius: 0.5em)[```ts let abc = 123;```] 。
 
 == 代码
 #v(-1em)
-#img(caption: [这是代码图片])[
+#img(caption: [这是代码的图])[
 #set par(leading: 0.39em)
   ```py
 class MermaidGenerator(TextGenerator):
